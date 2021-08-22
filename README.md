@@ -8,7 +8,7 @@ Can output artist, album, and track names for use in automatic TOC with somethin
 
 ## Requirements
 
-This Terraform requires a modified version of `terraform-provider-spotify`, which you can build from https://github.com/ecliptik/terraform-provider-spotify in the `spotify_album_tracks` branch.
+This Terraform requires a modified version of `terraform-provider-spotify`, which you can build from https://github.com/ecliptik/terraform-provider-spotify/tree/spotify_album_tracks.
 
 Follow [Create a Spotify Playlist with Terraform](https://learn.hashicorp.com/tutorials/terraform/spotify-playlist) for initial setup and configuration.
 
