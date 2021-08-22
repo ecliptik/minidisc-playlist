@@ -26,8 +26,8 @@ variable "silence" {
 
 #Create the playlist from tracks on an album
 resource "spotify_playlist" "minidisc" {
-  name        = "MiniDisc Playlist"
-  description = "MiniDisc Playlist created from Terraform"
+  name        = "MiniDisc Synchro Rec Playlist"
+  description = "MiniDisc Synchro Rec Playlist created with Terraform - https://github.com/ecliptik/minidisc-playlist"
   public      = false
 
   #Append the silience track after every track in an album
