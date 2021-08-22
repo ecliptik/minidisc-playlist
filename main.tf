@@ -12,25 +12,30 @@ provider "spotify" {
   api_key = var.spotify_api_key
 }
 
+#Variable to use from command line to choose album
+variable "album_id" {
+  type = string
+  description = "Spotify Album ID to create playlist from"
+}
+
 variable "silence" {
   type = list
   description = "Spotify Track ID of silent track to add in playlist"
   default = ["5XSKC4d0y0DfcGbvDOiL93"]
 }
 
+#Create the playlist from tracks on an album
 resource "spotify_playlist" "minidisc" {
   name        = "MiniDisc Playlist"
   description = "MiniDisc Playlist created from Terraform"
   public      = false
 
+  #Append the silience track after every track in an album
   tracks = flatten([for t in data.spotify_album.minidisc.tracks[*] : concat([t],[var.silence]) ])
-  #tracks = flatten([
-  #  data.spotify_album.minidisc.tracks[*],
-  #])
 }
 
 data "spotify_album" "minidisc" {
-  url = "https://open.spotify.com/album/0rXLjiZSS0B7yYqCvz2akm"
+  spotify_id = var.album_id
 }
 
 data "spotify_artist" "minidisc" {
@@ -38,7 +43,7 @@ data "spotify_artist" "minidisc" {
 }
 
 output "tracks" {
-  value = data.spotify_album.minidisc.tracks
+  value = data.spotify_album.minidisc.track_names[*]
 }
 output "artist" {
   value = data.spotify_artist.minidisc.name
@@ -46,7 +51,6 @@ output "artist" {
 
 output "album" {
   value = data.spotify_album.minidisc.name
-
 }
 
 output "playlist_url" {
