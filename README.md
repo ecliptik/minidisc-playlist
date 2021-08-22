@@ -2,7 +2,7 @@
 
 Creates a Spotify playlist with [Terraform](https://www.terraform.io) using the [Spotify Provider](https://registry.terraform.io/providers/conradludgate/spotify/latest/docs) that inserts a track between all tracks in a playlist.
 
-This is useful for when recording music to a [MiniDisc](https://www.minidisc.wiki) 💽 using [Synchro Rec](https://www.minidisc.wiki/guides/dubbing?s[]=synchro#synchro_rec) with a digital optical signal to automatically create track markers.
+This is useful for when recording music to a [MiniDisc](https://www.minidisc.wiki) 💽 using [Synchro Rec](https://www.minidisc.wiki/guides/dubbing#synchro_rec) with a digital optical signal to automatically create track markers.
 
 Can output artist, album, and track names for use in automatic TOC with something like [md-rec](https://github.com/fijam/md-rec).
 
